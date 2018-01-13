@@ -38,8 +38,7 @@ def get_reddit_data():
 
 @ask.launch
 def start_skill():
-    # s = "Would you like me to read the headlines for {}".format(subreddit)
-    s = "Would you like me to tell you who the best fifa player is?"
+    s = "Would you like me to read the headlines for {}".format(subreddit)
     return question(s)
 
 
@@ -50,8 +49,8 @@ def start_skill():
 def share_headlines():
     headlines = get_reddit_data()
     headline_msg = "Current headlines are {}".format(headlines)
-    # return statement(headline_msg)
-    return statement("It's not toby thats for sure!")
+    return statement(headline_msg)
+    # return statemen("It's not toby thats for sure!")
 
 
 @ask.intent("NoIntent")
