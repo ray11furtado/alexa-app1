@@ -50,7 +50,6 @@ def share_headlines():
     headlines = get_reddit_data()
     headline_msg = "Current headlines are {}".format(headlines)
     return statement(headline_msg)
-    # return statemen("It's not toby thats for sure!")
 
 
 @ask.intent("NoIntent")
