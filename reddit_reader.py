@@ -38,24 +38,44 @@ def get_reddit_data():
 
 @ask.launch
 def start_skill():
-    s = "Would you like me to read the headlines for {}".format(subreddit)
+    s = "Would you like me to read some reddit headlines?"
     return question(s)
 
+
+
+# Handles user choosing subreddit
+
+# @ask.launch
+# def start_skill():
 
 # Handles if user says yes
 
 
+
 @ask.intent("YesIntent")
 def share_headlines():
-    headlines = get_reddit_data()
-    headline_msg = "Current headlines are {}".format(headlines)
-    return statement(headline_msg)
+    s = "What subreddit would you like me to read?"
+    return question(s)
+    # headlines = get_reddit_data()
+    # headline_msg = "Current headlines are {}".format(headlines)
+    # return statement(headline_msg)
 
 
 @ask.intent("NoIntent")
 def no_intent():
     bye = "Okay then, bye"
     return statement(bye)
+
+
+
+
+@ask.intent("AnswerIntent", mapping={'subreddit': subreddit})
+def subredditCheck():
+    s = "is {} the correct subreddit?".format(subreddit)
+    return question(s)
+
+
+
 
 
 
